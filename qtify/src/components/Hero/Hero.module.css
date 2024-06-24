@@ -1,0 +1,21 @@
+.heroSection{
+    height: 270px;
+    width: 100%;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.textSection{
+    text-align:center;
+}
+.textSection>h1{
+    font-size: 32px;
+    font-family: var(--body-font);
+}
+.heroImg{
+    height: 212px;
+
+}
