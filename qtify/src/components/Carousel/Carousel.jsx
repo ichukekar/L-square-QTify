@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 import styles from './Carousel.module.css';
-import 'swiper/swiper-bundle.min.css';  // Main Swiper CSS bundle
 
 import CarouselLeftNavigation from './CarouselLeftNavigation';
 import CarouselRightNavigation from './CarouselRightNavigation';
@@ -33,17 +34,20 @@ const Carousel = ({ data, renderComponent }) => {
         navigation={{ prevEl: '.swiper-button-prev', nextEl: '.swiper-button-next' }}
       >
         {swiperInstance && <Controls data={data} swiper={swiperInstance} />}
-        {swiperInstance && <CarouselLeftNavigation swiper={swiperInstance} />}
-        {swiperInstance && <CarouselRightNavigation swiper={swiperInstance} />}
         {data.map((ele, index) => (
           <SwiperSlide key={index}>{renderComponent(ele)}</SwiperSlide>
         ))}
       </Swiper>
+      {swiperInstance && <CarouselLeftNavigation swiper={swiperInstance} />}
+      {swiperInstance && <CarouselRightNavigation swiper={swiperInstance} />}
     </div>
   );
 };
 
 export default Carousel;
+
+
+
 
 
 
